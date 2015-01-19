@@ -1,0 +1,9 @@
+div#popup {
+	width: 150px;
+}
+
+div#divBy {
+	float: right;
+	font-style: italic;
+	margin: 5px;
+}

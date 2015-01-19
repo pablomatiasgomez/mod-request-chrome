@@ -1,0 +1,51 @@
+﻿{
+    "manifest_version": 2,
+
+    "name": "Request Modifier",
+    "short_name": "Mod-Request",
+    "description": "This extension allows you to modify request attributes (method, headers, etc) on the fly",
+    "author": "Pablo Matías Gomez",
+    "version": "1.1",
+
+    "icons": {
+        "16": "images/icons/icon.png",
+        "48": "images/icons/icon.png",
+        "128": "images/icons/icon128.png" 
+    },
+
+    "browser_action": {
+        "default_icon": "images/icons/icon.png",
+        "default_title": "Mod Request",
+        "default_popup": "html/popup.html"
+    },
+
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ],
+        "persistent": true
+    },
+
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "*://*/*"
+    ],
+
+    "web_accessible_resources": [
+        "html/redirector.html"
+    ],
+
+     "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+
+            "js": [
+                "js/jquery-1.11.0.js", 
+                "js/page.js"
+            ]
+        }
+    ]
+}
